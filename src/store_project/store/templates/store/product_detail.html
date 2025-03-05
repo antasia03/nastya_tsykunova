@@ -15,7 +15,7 @@
             <h4 class="text-primary">{{ product.price }}</h4>
 
             <div class="d-flex gap-3 mt-4">
-                {% if product.pk not in products_in_cart %}
+                {% if product.pk not in products_in_cart or not user.is_authenticated %}
                 <form method="POST" action="{% url 'add_to_cart' pk=product.pk %}" class="d-flex flex-column ">
                     {% csrf_token %}
                     <button type="submit" class="btn btn-buy w-100">

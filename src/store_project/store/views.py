@@ -197,7 +197,7 @@ class OrderCreateView(View):
             fail_silently=False,
         )
         send_telegram_notification(order.receiver_details.telegram_user_id, 
-            f"Новый заказ!\nНомер заказа: {order.order_number}\nСумма заказа: {order.total_price}\nПользователь: {user.username}\nТелефон: {user.profile.phone_number}")
+            f"Спасибо за заказ!\nНомер заказа: {order.order_number}\nСумма заказа: {order.total_price}\n")
 
         messages.success(request, f"Ваш заказ оформлен! Доставка будет по адресу: {user.profile.address}")
         return redirect('order_success', order.order_number)
