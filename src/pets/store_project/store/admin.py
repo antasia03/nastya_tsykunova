@@ -1,8 +1,5 @@
 from django.contrib import admin
 from . import models
-from django.http import HttpRequest
-from django.db.models import QuerySet
-
 
 admin.site.site_title = 'Интернет-магазин одежды'
 admin.site.site_header = 'Интернет-магазин одежды'

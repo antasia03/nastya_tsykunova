@@ -88,17 +88,21 @@ WSGI_APPLICATION = 'store_project.wsgi.application'
 #     }
 # }
 
-load_dotenv()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD' : os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT':os.getenv('DB_PORT'),
+        'NAME': 'shop',  # имя базы данных
+        'USER': 'shop_admin',  # имя пользователя
+        'PASSWORD': 'Nastya_03.04',  # пароль
+        'HOST': 'db',  # хост контейнера db
+        'PORT': '5432',  # стандартный порт PostgreSQL
+        'OPTIONS': {
+            'connect_timeout': 10,  # Пытаемся подключиться к базе 10 секунд
+        },
     }
 }
+
+
 
 
 # Password validation
